@@ -1,0 +1,28 @@
+#content{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeImg{
+    width: 50%;
+}
+
+.menuItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:auto;
+}
+
+.menuItem h2{
+    margin-bottom: 0;
+}
+
+.menuList{
+    display:flex;
+    gap: 1rem;
+    margin-top: 5rem;
+}
