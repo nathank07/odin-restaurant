@@ -1,11 +1,18 @@
-import restaurant from "../assets/restaurant.jpg";
+import porkchop from "../assets/porkchop.webp";
+import steak from "../assets/steak.webp";
+
+const body = document.querySelector("#content");
+const menuList = document.createElement('div');
+menuList.classList.add("menuList");
 
 export default function menu(returnName){
     if(returnName === true){
         return "Menu";
     }
-    const body = document.querySelector("#content");
-    body.appendChild(menuItem("Porkchop", "Delicious", restaurant));
+    menuList.innerHTML = "";
+    menuItem("Porkchop", "Delicious", porkchop);
+    menuItem("Steak", "Also delicious", steak);
+    body.appendChild(menuList);
 }
 
 function menuItem(name, description, image){
@@ -17,8 +24,9 @@ function menuItem(name, description, image){
     descriptionDiv.innerHTML = description;
     const menuImage = new Image();
     menuImage.src = image;
+    menuImage.classList.add("menuImage");
     item.appendChild(menuImage);
     item.appendChild(itemName);
     item.appendChild(descriptionDiv);
-    return item;
+    menuList.appendChild(item);
 }
